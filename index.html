@@ -1,84 +1,131 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Premium Shop</title>
 
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 <style>
 body{
-font-family: Arial;
 background:#0f172a;
 color:white;
+font-family:Arial;
 text-align:center;
-padding:40px;
+padding:20px;
 }
 
 h1{
-font-size:40px;
-margin-bottom:30px;
+margin-bottom:20px;
+}
+
+.card{
+background:#1e293b;
+border-radius:12px;
+padding:15px;
+margin:10px auto;
+width:260px;
+}
+
+.buy{
+margin-top:8px;
+padding:8px 14px;
+border:none;
+border-radius:8px;
+background:#22c55e;
+color:white;
+font-size:14px;
 }
 
 .menu{
-display:flex;
-flex-direction:column;
-gap:15px;
-max-width:300px;
-margin:auto;
-}
-
-button{
-padding:15px;
-font-size:18px;
+margin:10px;
+padding:12px;
+width:240px;
 border:none;
 border-radius:10px;
 background:#2563eb;
 color:white;
-cursor:pointer;
-transition:0.2s;
-}
-
-button:hover{
-background:#1d4ed8;
-}
-
-.support{
-background:#16a34a;
-}
-
-.support:hover{
-background:#15803d;
+font-size:16px;
 }
 </style>
-
 </head>
 
 <body>
 
 <h1>🛒 Premium Shop</h1>
 
-<div class="menu">
+<button class="menu" onclick="premium()">💎 Telegram Premium</button>
+<button class="menu" onclick="stars()">⭐ Telegram Stars</button>
+<button class="menu" onclick="robux()">🎮 Robux</button>
+<button class="menu" onclick="brain()">🧠 Brainrot</button>
+<button class="menu" onclick="support()">📞 Поддержка</button>
 
-<button onclick="alert('Скоро будет покупка Telegram Premium')">
-💎 Telegram Premium
-</button>
+<div id="shop"></div>
 
-<button onclick="alert('Скоро будет покупка Stars')">
-⭐ Telegram Stars
-</button>
+<script>
 
-<button onclick="alert('Скоро будет покупка Robux')">
-🎮 Robux
-</button>
+let tg = window.Telegram.WebApp;
+tg.expand();
 
-<button onclick="alert('Скоро будет покупка Brainrot')">
-🧠 Brainrot
-</button>
+function sendOrder(text){
+tg.sendData(text);
+tg.showAlert("Заказ отправлен боту");
+}
 
-<button class="support" onclick="window.open('https://t.me/')">
-📞 Поддержка
-</button>
+function premium(){
+document.getElementById("shop").innerHTML = `
+<div class="card">1 месяц — 60 000 сум<br>
+<button class="buy" onclick="sendOrder('Premium 1 месяц')">🛒 Купить</button></div>
 
-</div>
+<div class="card">3 месяца — 150 000 сум<br>
+<button class="buy" onclick="sendOrder('Premium 3 месяца')">🛒 Купить</button></div>
+
+<div class="card">1 год — 330 000 сум<br>
+<button class="buy" onclick="sendOrder('Premium 1 год')">🛒 Купить</button></div>
+`;
+}
+
+function stars(){
+document.getElementById("shop").innerHTML = `
+<div class="card">100 Stars — 28 000 сум<br>
+<button class="buy" onclick="sendOrder('100 Stars')">🛒 Купить</button></div>
+
+<div class="card">200 Stars — 56 000 сум<br>
+<button class="buy" onclick="sendOrder('200 Stars')">🛒 Купить</button></div>
+
+<div class="card">500 Stars — 120 000 сум<br>
+<button class="buy" onclick="sendOrder('500 Stars')">🛒 Купить</button></div>
+
+<div class="card">1000 Stars — 250 000 сум<br>
+<button class="buy" onclick="sendOrder('1000 Stars')">🛒 Купить</button></div>
+`;
+}
+
+function robux(){
+document.getElementById("shop").innerHTML = `
+<div class="card">80 Robux — 15 000 сум<br>
+<button class="buy" onclick="sendOrder('80 Robux')">🛒 Купить</button></div>
+
+<div class="card">160 Robux — 30 000 сум<br>
+<button class="buy" onclick="sendOrder('160 Robux')">🛒 Купить</button></div>
+
+<div class="card">400 Robux — 75 000 сум<br>
+<button class="buy" onclick="sendOrder('400 Robux')">🛒 Купить</button></div>
+
+<div class="card">800 Robux — 150 000 сум<br>
+<button class="buy" onclick="sendOrder('800 Robux')">🛒 Купить</button></div>
+`;
+}
+
+function brain(){
+window.location.href="https://t.me/Premium_shop_telegram_bot";
+}
+
+function support(){
+window.location.href="https://t.me/Premium_shop_telegram_bot";
+}
+
+</script>
 
 </body>
 </html>
