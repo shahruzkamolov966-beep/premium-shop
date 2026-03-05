@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Premium Shop</title>
+
+<style>
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+h1{
+font-size:40px;
+margin-bottom:30px;
+}
+
+.menu{
+display:flex;
+flex-direction:column;
+gap:15px;
+max-width:300px;
+margin:auto;
+}
+
+button{
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.support{
+background:#16a34a;
+}
+
+.support:hover{
+background:#15803d;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🛒 Premium Shop</h1>
+
+<div class="menu">
+
+<button onclick="alert('Скоро будет покупка Telegram Premium')">
+💎 Telegram Premium
+</button>
+
+<button onclick="alert('Скоро будет покупка Stars')">
+⭐ Telegram Stars
+</button>
+
+<button onclick="alert('Скоро будет покупка Robux')">
+🎮 Robux
+</button>
+
+<button onclick="alert('Скоро будет покупка Brainrot')">
+🧠 Brainrot
+</button>
+
+<button class="support" onclick="window.open('https://t.me/')">
+📞 Поддержка
+</button>
+
+</div>
+
+</body>
+</html>
