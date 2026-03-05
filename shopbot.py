@@ -154,3 +154,4 @@ ID: {call.from_user.id}
 
 
 bot.infinity_polling()
+web = types.WebAppInfo("https://premiumshop.netlify.app")
